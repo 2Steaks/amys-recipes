@@ -1,0 +1,9 @@
+.o-color--theme a {
+    color: currentColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: currentColord;
+    }
+}

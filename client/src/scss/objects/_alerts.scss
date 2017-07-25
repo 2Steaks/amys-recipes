@@ -1,0 +1,15 @@
+.o-message {
+    padding: $grid-gutter 0;
+}
+
+.o-message ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.o-message li {
+    margin-bottom: 10px;
+    color: $red;
+    text-align: center;
+}

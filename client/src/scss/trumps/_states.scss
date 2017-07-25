@@ -1,0 +1,85 @@
+/**
+ * HIDE ELEMENTS
+ */
+
+.is-hidden {
+    display: none;
+
+    &\@xs {
+        @include mq($from: xs, $until: sm) {
+            display: none;
+        }
+    }
+
+    &\@sm {
+        @include mq($from: sm, $until: md) {
+            display: none;
+        }
+    }
+
+    &\@md {
+        @include mq($from: md, $until: lg) {
+            display: none;
+        }
+    }
+
+    &\@mobile {
+        @include mq(xs) {
+            display: none;
+        }
+
+        @include mq(md) {
+            display: inherit;
+        }
+    }
+
+    &\@desktop {
+        @include mq(md) {
+            display: none;
+        }
+    }
+
+    &\@print {
+        display: none;
+    }
+}
+
+
+/**
+ * SHOW ELEMENTS AT CERTAIN SCREEN WIDTHS
+ */
+
+.is-visible {
+    &\@xs {
+        @include mq($from: xs, $until: sm) {
+            display: inherit;
+        }
+
+        display: none;
+    }
+
+    &\@sm {
+        @include mq($from: sm, $until: md) {
+            display: inherit;
+        }
+
+        display: none;
+    }
+
+    &\@md {
+        @include mq($from: md, $until: lg) {
+            display: inherit;
+        }
+
+        display: none;
+    }
+}
+
+
+/**
+ * DISABLED - Greyed out
+ */
+
+.is-disabled {
+    opacity: 0.3;
+}

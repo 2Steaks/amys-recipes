@@ -1,0 +1,137 @@
+$choice-size: 30px;
+
+// combined with either of the following
+// checkbox - .c-form-checkbox
+// radio - .c-form-radio
+.c-form-choice {
+    padding: 0 $grid-gutter;
+    text-align: center;
+}
+
+// container
+.c-form-choice__item {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding-bottom: $grid-gutter / 2;
+    border: none;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+// input - hidden
+.c-form-choice input {
+    top: 50%;
+    left: 0;
+    z-index: 100;
+    z-index: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: -10px 0 0;
+    padding: 0;
+    width: $choice-size;
+    height: $choice-size;
+    vertical-align: middle;
+    font-size: 100%;
+    font-family: inherit;
+    line-height: normal;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+// input - styled
+.c-form-choice__item label {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-left: 0;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.c-form-choice__item label span.c-form-choice__option {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 10px;
+    width: $choice-size;
+    height: $choice-size;
+    border: 1PX solid grey;
+    border-radius: 2px;
+    background-color: white;
+    vertical-align: middle;
+
+    .c-form-checkbox & {
+        border-radius: 2px;
+    }
+
+    .c-form-radio & {
+        border-radius: 50%;
+    }
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: currentColor;
+        content: "";
+        text-align: center;
+        font-size: 1em;
+        line-height: 1;
+        opacity: 0;
+        transition: opacity .2s, transform .2s;
+        transform: scale(0);
+
+        .c-form-radio & {
+            border-radius: 50%;
+        }
+
+        .c-form-checkbox & {
+            font-size: 16px;
+        }
+    }
+}
+
+.c-form-choice__item input[type=checkbox]+label {
+    padding-left: 0;
+}
+
+// input - styled: hover
+.c-form-choice__item label:hover span.c-form-choice__option:before {
+    opacity: .5;
+    transform: scale(.4);
+}
+
+// input - styled: checked
+.c-form-choice__item input:checked+label span.c-form-choice__option:before {
+    text-indent: 0;
+    opacity: 1;
+    transform: scale(.7);
+}
+
+//Label
+.c-form-choice__label {
+    display: inline-block;
+    max-width: 80%;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 20px;
+}
+
+.c-form-choice__label span {
+    color: $grey-dark;
+}
+
+.c-form-choice__label a {
+    margin: 0;
+    border-color: currentColor;
+}

@@ -1,0 +1,7 @@
+.o-theme--dark-pink {
+    @include theme-component(black, darken(pink, 10));
+}
+
+.o-theme--pink {
+    @include theme-component(black, pink);
+}

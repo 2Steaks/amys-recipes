@@ -1,0 +1,24 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "mocha": true
+    },
+    "plugins": [
+        "html"
+    ],
+    "rules": {
+        "no-console": 0,
+        "no-global-assign": ["error", {"exceptions": ["console"]}],
+        "no-unused-vars": ["error", { "vars": "local", "varsIgnorePattern": "ScrollToPlugin" }]
+    }
+}

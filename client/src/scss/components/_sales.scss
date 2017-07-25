@@ -1,0 +1,41 @@
+// sales template
+.c-sales {
+    height: 100%;
+}
+
+// desktop
+.c-sales__desktop {
+    margin: 0;
+}
+
+.c-sales__desktop .o-panel {
+    padding: 0;
+}
+
+.c-sales__desktop .o-panel__content {
+    padding: 30px 30px;
+}
+
+.c-sales__desktop>.col {
+    height: 100%;
+
+    &:first-child {
+        border-right: 1PX solid $grey-dark;
+    }
+
+    &:last-child {
+        padding: 0;
+    }
+}
+
+// mobile
+.c-sales__mobile {
+    height: 100%;
+}
+
+// buttons
+.c-sales .o-panel__controls {
+    @include mq(md) {
+        margin: 0 (-$grid-gutter / 2);
+    }
+}

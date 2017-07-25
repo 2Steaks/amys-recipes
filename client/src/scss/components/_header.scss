@@ -1,0 +1,90 @@
+// container
+.c-header {
+    position: absolute 0 auto auto 0;
+    z-index: 1;
+    padding: 0 10px;
+    width: 100%;
+}
+
+// lists for logo and links
+.c-header ul {
+    display: block;
+    margin-bottom: 0;
+}
+
+.c-header ul li {
+    margin-bottom: 0;
+    margin-left: .6em;
+}
+
+// container for divider
+.c-header__toolbar {
+    @include row($grid-gutter);
+
+    overflow: hidden;
+    padding: 10px;
+    background-color: white;
+}
+
+// left side of header
+.c-header__left {
+    @include column-base($grid-gutter);
+
+    @include mq(xs) {
+        @include column(10);
+    }
+
+    @include mq(sm) {
+        @include column(6);
+    }
+
+
+    text-align: left;
+}
+
+// right side of header
+.c-header__right {
+    @include column-base($grid-gutter);
+
+    @include mq(xs) {
+        @include column(2);
+    }
+
+    @include mq(sm) {
+        @include column(6);
+    }
+
+    text-align: right;
+}
+
+.c-header__right ul {
+    float: right;
+    clear: both;
+}
+
+// logo
+.c-header__logo {}
+
+.c-header__logo img {
+    height: 24px;
+}
+
+// header action / link
+.c-header__action {
+    cursor: pointer;
+}
+
+// user icon
+.c-header__user {
+    padding-top: 2px;
+}
+
+// info icon
+.c-header .c-icon--info {
+    width: 1.3em;
+    height: 1.3em;
+}
+
+.c-header .c-icon--info svg {
+    top: -5px;
+}

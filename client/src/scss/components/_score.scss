@@ -1,0 +1,62 @@
+// container
+.c-score {
+    padding-bottom: 60px;
+}
+
+// stage
+.c-score__inner {
+    @include mq($until: xs) {
+        &:before {
+            top: 3px;
+            left: 3px;
+            width: 100.5%;
+            height: 102%;
+        }
+
+        &:after {
+            width: 98%;
+            height: 99%;
+        }
+    }
+
+    margin: 0;
+    padding: 0;
+}
+
+// modified panel
+.c-score__panel {
+    padding: 20px 20%;
+}
+
+// dividing border
+.c-score .col:nth-child(2) {
+    border-left: 1PX solid currentColor;
+}
+
+// modified circle object
+.c-score .o-circle {
+    margin-bottom: 10px;
+}
+
+.c-score .o-circle--forward {
+    &:before {
+        top: 3px;
+        left: 3px;
+    }
+}
+
+// prize draw label
+.c-score__text {
+    @include mq(xs) {
+        font-size: 18px;
+    }
+
+    @include mq(md) {
+        font-size: 26px;
+    }
+
+    display: block;
+    color: currentColor;
+    text-align: center;
+    line-height: 1.2;
+}

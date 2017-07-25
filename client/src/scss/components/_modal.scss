@@ -1,0 +1,106 @@
+// container
+.c-modal {
+    position: fixed 0 0 0 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+// stage
+.c-modal__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+// header
+.c-modal__header {
+    @include row($grid-gutter);
+
+    @include mq(xs) {
+        padding: 5px 15px 15px;
+    }
+
+    @include mq(sm) {
+        padding: 40px 40px 10px;
+    }
+}
+
+.c-modal__header-left {
+    @include column-base($grid-gutter);
+    @include column(6);
+
+    text-align: left;
+}
+
+.c-modal__header-right {
+    @include column-base($grid-gutter);
+    @include column(6);
+
+    text-align: right;
+}
+
+// title
+.c-modal__title {
+    padding: 0 $grid-gutter;
+}
+
+// icons
+.c-modal__close .c-icon,
+.c-modal__back .c-icon {
+    @include mq(xs) {
+        width: 1em;
+        height: 1em;
+    }
+
+    @include mq(sm) {
+        width: 2em;
+        height: 2em;
+    }
+}
+
+// close button
+.c-modal__close {
+    cursor: pointer;
+
+    .c-modal--success & {
+        display: none;
+    }
+}
+
+// back button
+.c-modal__back {
+    cursor: pointer;
+
+    .c-modal--success & {
+        display: none;
+    }
+}
+
+// content area
+.c-modal__body {
+    flex: 1;
+    overflow: auto;
+    padding: $grid-gutter $grid-gutter 0 $grid-gutter;
+    height: 100%;
+}
+
+// success modal
+.c-modal--success .o-circle__body {
+    padding-top: 15px;
+}
+
+.c-model--success__circle {
+    padding: 0 40px 10px;
+}
+
+// other modifiers
+.c-modal__body .o-wrapper {
+    padding: 0;
+}
+
+.c-modal__body .o-panel__content {
+    padding-top: 0;
+}

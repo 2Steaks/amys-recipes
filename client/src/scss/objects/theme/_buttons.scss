@@ -1,0 +1,14 @@
+.o-btn--red {
+    background-color: $red;
+    color: white;
+
+    &:hover:enabled {
+        background-color: darken($red, 5);
+    }
+
+    &:disabled {
+        border-color: $red;
+        background-color: transparent;
+        color: $red;
+    }
+}

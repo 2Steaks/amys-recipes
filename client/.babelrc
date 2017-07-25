@@ -1,0 +1,15 @@
+{
+    "env": {
+        "testing": {
+            "presets": ["es2015"],
+            "plugins": ["rewire"]
+        }
+    },
+    "presets": [
+        // Because web­pack 2 sup­ports import and export,
+        // we don’t need ba­bel to han­dle these in pro­duc­tion,
+        // and we can set the mod­ules pa­ra­me­ter to false.
+        ["es2015", { "modules": false }],
+        "stage-3"
+    ]
+}

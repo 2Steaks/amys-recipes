@@ -1,0 +1,15 @@
+a {
+    @include font-smoothing;
+
+    border-bottom: 1PX solid currentColor;
+    color: $grey-medium;
+    text-decoration: none;
+    font-size: 18px;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $grey-medium;
+        text-decoration: none;
+    }
+}

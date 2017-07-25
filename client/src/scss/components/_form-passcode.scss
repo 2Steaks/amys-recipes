@@ -1,0 +1,55 @@
+// container
+.c-passcode {
+    position: relative;
+    display: inline-block;
+    margin-bottom: $grid-gutter;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid $grey-dark;
+    background-color: white;
+    text-align: left;
+}
+
+// input - hidden
+input.c-passcode__input {
+    display: inline-block;
+    padding: 10px;
+    width: 40px;
+    border: none;
+    text-align: center;
+    font-size: 26px;
+
+    &::placeholder {
+        display: none;
+        color: white;
+        text-indent: -9999px;
+    }
+
+    .has-input &,
+    .has-focus & {
+        &::placeholder {
+            display: inline-block;
+            color: grey;
+            text-indent: 0;
+        }
+    }
+}
+
+// input - styled
+.c-passcode__label {
+    position: absolute 50% auto auto 20px;
+    z-index: 1;
+    width: 100%;
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 34px;
+    transition: transform .3s, color .3s;
+    transform: translateY(-50%);
+    transform-origin: 0 50%;
+    text-rendering: geometricPrecision;
+
+    .has-input &,
+    .has-focus & {
+        transform: translate3d(5px, -45px, 0) scale3d(.45, .45, .45) translateZ(1px) !important;
+    }
+}

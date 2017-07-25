@@ -1,0 +1,58 @@
+// HEADINGS
+@mixin heading-1 {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1PX solid $red;
+    color: $black;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+@mixin heading-2 {
+    font-size: 35px;
+}
+
+@mixin heading-3 {
+    font-size: 30px;
+}
+
+@mixin heading-4 {
+    font-size: 24px;
+}
+
+@mixin heading-5 {
+    font-size: 18px;
+}
+
+// fix custom fonts
+@mixin font-smoothing {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// import custom fonts for all platforms
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false) {
+    @font-face {
+        @if $asset-pipeline==true {
+            src: font-url('#{$file-path}.eot');
+            src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+            font-url('#{$file-path}.woff') format('woff'),
+            font-url('#{$file-path}.ttf') format('truetype'),
+            font-url('#{$file-path}.svg##{$font-family}') format('svg');
+        }
+
+        @else {
+            src: url('#{$file-path}.eot');
+            src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+            url('#{$file-path}.woff') format('woff'),
+            url('#{$file-path}.ttf') format('truetype'),
+            url('#{$file-path}.svg##{$font-family}') format('svg');
+        }
+
+        font-weight: $weight;
+        font-style: $style;
+        font-family: $font-family;
+    }
+}

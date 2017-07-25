@@ -1,0 +1,84 @@
+// offset padding due to layers style
+.c-score-draw {
+    padding-left: 10%;
+}
+
+// prize draw entry number
+span.c-score-draw__entries {
+    @include mq(xs) {
+        left: -10px;
+        font-size: 21px;
+    }
+
+    @include mq(md) {
+        left: -12px;
+        font-size: 30px;
+    }
+
+    position: relative;
+    color: white;
+}
+
+.c-score-draw .o-circle__body {
+    @include mq(xs) {
+        padding-top: 15px;
+    }
+
+    @include mq(md) {
+        padding-top: 30px;
+    }
+}
+
+// ticket icon modified
+.c-score-draw .c-icon--ticket {
+    .is-unlocked & {
+        @include mq(xs) {
+            top: -13px;
+            left: 1px;
+            width: 2.05em;
+            height: 2.12em;
+        }
+
+        @include mq(md) {
+            top: -20px;
+            width: 3em;
+            height: 3em;
+        }
+    }
+}
+
+.c-score-draw__popup {
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+
+    .is-unlocked & {
+        @include mq(xs) {
+            top: 1%;
+            right: -.5em;
+        }
+
+        @include mq(sm) {
+            top: .8em;
+            right: -.8em;
+        }
+    }
+
+    .is-done & {
+        top: -.6em;
+        right: -.7em;
+    }
+}
+
+.c-score-draw__popup.c-icon--info {
+    @include mq(xs) {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    @include mq(md) {
+        width: 1.4em;
+        height: 1.4em;
+    }
+}

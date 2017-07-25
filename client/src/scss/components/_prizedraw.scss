@@ -1,0 +1,150 @@
+// container
+.c-prizedraw {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 50px;
+
+    .is-unlocked & {
+        position: relative;
+        left: 7px;
+    }
+}
+
+// stage
+.c-prizedraw__inner {
+    position: relative;
+    padding: 20px 20px 53%;
+    height: 0;
+}
+
+// locked background
+.c-prizedraw__background {
+    position: absolute 0 0 auto auto;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.c-prizedraw__background .c-icon {
+    width: 100%;
+    height: 100%;
+}
+
+// locked content
+.c-prizedraw__body {
+    position: absolute 0 auto auto 0;
+    width: 100%;
+    height: 100%;
+}
+
+// locked content display in a vertical list with even spacing
+.c-prizedraw__list {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.c-prizedraw__list li {
+    margin-bottom: 5px;
+    color: $grey-medium;
+    font-size: 24px;
+}
+
+// overlapped icons container
+.c-prizedraw__icons {
+    padding-bottom: 10px;
+}
+
+.c-prizedraw__icons .c-icon {
+    position: relative;
+    width: 1.6em;
+    height: 1.6em;
+
+    &--ticket {
+        left: 9px;
+    }
+
+    &--lock {
+        left: -9px;
+    }
+}
+
+// slide modification to contained score component
+.c-prizedraw__score.c-score {
+    padding-bottom: 10px;
+}
+
+// borrowed marker html
+.c-prizedraw__marker {
+    padding-bottom: 0;
+}
+
+// done state prizedraw informatin button
+.c-prizedraw__promo {
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+
+    .is-unlocked & {
+        @include mq(xs) {
+            top: 1%;
+            right: -.5em;
+        }
+
+        @include mq(sm) {
+            top: .8em;
+            right: -.8em;
+        }
+    }
+
+    .is-done & {
+        top: -.6em;
+        right: -.7em;
+    }
+}
+
+.c-prizedraw__promo .c-icon--info {
+    @include mq(xs) {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    @include mq(md) {
+        width: 1.4em;
+        height: 1.4em;
+    }
+}
+
+// entry amount
+.c-prizedraw__entries {
+    position: absolute;
+    right: 14px;
+    bottom: 12px;
+    color: $grey-medium;
+    font-size: 22px;
+}
+
+// icon styles
+.c-prizedraw__tickets .c-icon {
+    top: -10px;
+    left: -10px;
+}
+
+.c-prizedraw__marker .c-prizedraw__promo .c-icon {
+    top: 0px;
+}
+
+.c-prizedraw__marker .c-prizedraw__promo .c-icon svg {
+    position: relative;
+}
+
+.c-prizedraw__promo .c-icon--info svg {
+    @include mq(xs) {
+        top: -6px;
+    }
+
+    @include mq(md) {
+        top: -4px;
+    }
+}

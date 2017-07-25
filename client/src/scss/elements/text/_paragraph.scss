@@ -1,0 +1,9 @@
+p,
+q,
+span {
+    @include font-smoothing;
+
+    font-size: 18px;
+}
+
+p {}

@@ -1,0 +1,53 @@
+// base style
+.c-icon {
+    position: relative;
+    top: -0.0625em;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    vertical-align: middle;
+    fill: currentColor;
+    stroke: transparent;
+
+    &--fill {
+        width: 60%;
+        height: 60%;
+    }
+
+    &--cross,
+    &--left-arrow,
+    &--right-arrow,
+    &--plus,
+    &--minus {
+        fill: transparent;
+        stroke: currentColor;
+        stroke-width: 2px;
+    }
+
+    &--info,
+    &--profile {
+        overflow: hidden;
+        border: 1PX solid currentColor;
+        border-radius: 50%;
+        background-color: white;
+        color: currentColor;
+    }
+}
+
+// svg element
+.c-icon__svg {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    .c-icon--info & {
+        position: relative;
+        top: -2px;
+    }
+}
+
+//  TYPES
+.c-icon--info {
+    width: 1.6em;
+    height: 1.6em;
+}

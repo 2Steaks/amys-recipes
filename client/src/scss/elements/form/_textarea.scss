@@ -1,0 +1,20 @@
+textarea {
+    margin: 0;
+    padding: 0;
+    padding: $grid-gutter;
+    min-height: 242px;
+    width: 100%;
+    border: none;
+    font-size: 18;
+    resize: none;
+
+    &::placeholder {
+        text-indent: -9999px;
+        font-weight: normal;
+    }
+
+    &:focus+label {
+        @include form-focus;
+    }
+
+}

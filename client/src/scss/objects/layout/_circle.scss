@@ -1,0 +1,61 @@
+.o-circle {
+    position: relative;
+    margin-bottom: $grid-gutter;
+    padding-bottom: 100%;
+    height: 0;
+    border: 2PX solid black;
+    border-radius: 50%;
+    color: white;
+
+    &:before {
+        position: absolute;
+        z-index: -1;
+        width: 101%;
+        height: 101%;
+        border-radius: 50%;
+        background-color: currentColor;
+        content: '';
+    }
+
+    &--forward:before {
+        top: 4px;
+        left: 4px;
+    }
+
+    &--reverse:before {
+        top: -4px;
+        left: -4px;
+    }
+}
+
+.o-circle__inner {
+    position: absolute 0 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.o-circle__body {
+    flex: 1;
+    text-align: center;
+}
+
+.o-circle__body span {
+    @include mq(xs) {
+        font-size: 30px;
+    }
+
+    @include mq(md) {
+        font-size: 36px;
+    }
+
+    font-weight: bold;
+}
+
+.o-circle .c-icon {
+    color: white;
+}
+
+.o-circle .c-icon--info {
+    color: currentColor;
+}

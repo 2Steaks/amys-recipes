@@ -1,0 +1,16 @@
+.c-image {
+    position: relative;
+    display: inline-block;
+    margin-bottom: $grid-gutter;
+
+    .c-modal & {
+        display: block;
+        text-align: center;
+    }
+}
+
+.c-image img {
+    .c-modal & {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="309px" height="177px" viewBox="0 0 309 177" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>prize-draw</title>
+    <desc>Prize Draw Icon</desc>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(1.000000, 1.000000)" fill="#F6F6F6" stroke="#979797">
+            <path d="M307,0 L0,0 L0,55.1833333 C11.1452145,60.5987879 20.0026205,72.9081818 20.0026205,87.2348485 C20.0026205,101.561515 11.1452145,113.870909 0,119.286364 L0,175 L307,175 L307,119.606667 C294.841584,114.367273 286.282059,101.85 286.282059,87.2348485 C286.282059,72.619697 294.841584,60.1024242 307,54.8630303 L307,0 Z" id="Fill-3"></path>
+        </g>
+    </g>
+</svg>

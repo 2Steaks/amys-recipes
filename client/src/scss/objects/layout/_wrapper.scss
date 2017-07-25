@@ -1,0 +1,38 @@
+/**
+ * WRAPPER
+ */
+
+.o-wrapper {
+    &--padding {
+        padding: 40px 0;
+    }
+
+    &--stretch {
+        @include full-width;
+    }
+
+    &--extra-small {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    &--small {
+        margin: 0 auto;
+        max-width: $wrapper-width-small;
+    }
+
+    &--medium {
+        margin: 0 auto;
+        max-width: $wrapper-width-medium;
+    }
+
+    &--large {
+        margin: 0 auto;
+        max-width: $wrapper-width-large;
+    }
+}
+
+.o-wrapper__inner {
+    position: relative;
+    z-index: 1;
+}

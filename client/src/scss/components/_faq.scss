@@ -1,0 +1,46 @@
+.c-faq {}
+
+// item
+.c-faq__item {
+    margin-bottom: $grid-gutter;
+    cursor: pointer;
+}
+
+// question
+.c-faq__question {
+    overflow: hidden;
+}
+
+.c-faq__question-text {
+    float: left;
+    width: 90%;
+    color: currentColor;
+    text-decoration: underline;
+}
+
+// answer
+.c-faq__answer {
+    overflow: hidden;
+}
+
+.c-faq__answer span {
+    display: block;
+    padding-bottom: 15px;
+    border-bottom: 2PX solid lighten($grey-medium, 40);
+    color: $grey-medium;
+}
+
+// icon
+.c-faq__question .c-icon {
+    @include mq(xs) {
+        width: 1em;
+        height: 1em;
+    }
+
+    @include mq(sm) {
+        width: 1.3em;
+        height: 1.3em;
+    }
+
+    float: right;
+}

@@ -1,0 +1,31 @@
+/**
+ * HEADING
+ */
+
+.o-heading-1,
+.o-heading-2,
+.o-heading-3,
+.o-heading-4,
+.o-heading-5 {
+    @include font-smoothing;
+}
+
+.o-heading-1 {
+    @include heading-1;
+}
+
+.o-heading-2 {
+    @include heading-2;
+}
+
+.o-heading-3 {
+    @include heading-3;
+}
+
+.o-heading-4 {
+    @include heading-4;
+}
+
+.o-heading-5 {
+    @include heading-5;
+}

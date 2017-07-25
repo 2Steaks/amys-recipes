@@ -1,0 +1,17 @@
+.c-link {
+    display: inline-block;
+
+    .o-layers & {
+        display: block;
+        padding: $grid-gutter 0;
+        text-align: center;
+    }
+}
+
+.c-link a {
+    cursor: pointer;
+
+    .o-layers & {
+        color: $red;
+    }
+}

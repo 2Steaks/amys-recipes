@@ -1,0 +1,32 @@
+/**
+ * BACKGROUNDSIZE COVER
+ */
+
+.o-bg-cover {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+    filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+}
+
+
+/**
+ * OBJECT FIT - fits image to container
+ */
+
+.o-object-fit {
+    position: relative;
+}
+
+.o-object-fit img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

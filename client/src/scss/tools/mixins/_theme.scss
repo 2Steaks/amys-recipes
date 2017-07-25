@@ -1,0 +1,15 @@
+/**
+ * THEME COMPONENT - adds patterend background, colours text and buttons
+ */
+
+@mixin theme-component($textColor, $backgroundtextColor) {
+    color: $textColor;
+    background-color: $backgroundtextColor;
+}
+
+
+/**
+ * THEME PAGE - adds patterend backgrounds, colours text, backgrounds and buttons
+ */
+
+@mixin theme-page($color) {}

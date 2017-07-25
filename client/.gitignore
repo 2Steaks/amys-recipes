@@ -1,0 +1,13 @@
+.DS_Store
+.vscode/
+node_modules/
+temp/
+docs/
+npm-debug.log
+temp/
+
+# Ignore webpack build report file
+webpack.output.html
+
+# Ignore contents of dist folder; these get generated on build.
+dist/

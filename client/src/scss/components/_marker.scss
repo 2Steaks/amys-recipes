@@ -1,0 +1,175 @@
+// container
+.c-marker {
+    position: relative;
+    padding-bottom: 50px;
+
+    .is-unlocked &.has-prize,
+    .is-active &.has-prize {
+        padding-bottom: 60px;
+    }
+}
+
+// stage
+.c-marker__inner {
+    position: relative;
+    margin: 0 auto;
+    min-width: 73px;
+    width: 73px;
+    height: 73px;
+
+    .is-unlocked .has-prize &,
+    .is-active .has-prize & {
+        width: 100%;
+        transition: width $step-anim-speed ease-in-out;
+    }
+}
+
+// icon container
+.c-marker__icon {
+    position: absolute 0 auto auto 0;
+    z-index: 1;
+    display: inline-block;
+    width: 73px;
+    height: 73px;
+    border: 1PX solid $grey-medium;
+    border-radius: 50px;
+    background-color: $grey-light;
+    transition: background-color $step-anim-speed;
+
+    .is-unlocked & {
+        width: auto;
+        border: none;
+    }
+}
+
+// icons
+.c-marker__icon .c-icon {
+    position: absolute -1px 0 0 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    color: $grey-medium;
+}
+
+.c-marker__icon-locked,
+.c-marker__icon-unlocked {
+    transition: opacity $step-anim-speed;
+}
+
+.c-marker__icon-locked {
+    .is-unlocked & {
+        opacity: 0;
+    }
+
+    .is-done & {
+        display: none;
+    }
+}
+
+.c-marker__icon .c-icon.c-marker__icon-locked {
+    top: -5px;
+}
+
+.c-marker__icon-unlocked {
+    top: -1px;
+    left: 1px;
+
+    .is-locked & {
+        opacity: 0;
+    }
+
+    .is-unlocked &,
+    .is-active & {
+        color: white;
+    }
+}
+
+
+.c-marker__inactive-prize-amount {
+    position: absolute 0 auto 0 calc(50% + 35px);
+    padding-left: $grid-gutter;
+    color: $grey-medium-2;
+    transition: opacity $step-anim-speed;
+
+    .is-unlocked & {
+        opacity: 0;
+    }
+
+    .is-active & {
+        display: none;
+    }
+}
+
+.c-marker__inactive-prize-amount span {
+    position: relative -5px 0 0 0;
+    font-size: 26px;
+    line-height: 36px;
+}
+
+// activated prize text layer
+.c-marker__activation {
+    padding: 14px 18%;
+    max-width: none;
+    height: 100%;
+    border-radius: 35px;
+    color: currentColor;
+
+    &:before {
+        top: 3px;
+        left: 3px;
+        width: 100.5%;
+        height: 102%;
+    }
+
+    &:after {
+        width: 98%;
+        height: 91%;
+    }
+
+    &:before,
+    &:after {
+        border-radius: 35px;
+    }
+}
+
+.c-marker__activation-inner {
+    overflow: hidden;
+}
+
+// prize name i.e amazon voucher
+.c-marker__prize-name {
+    position: relative;
+    left: 18px;
+    white-space: nowrap;
+    font-size: 24px;
+}
+
+// circle container
+.c-marker .o-circle {
+    padding-bottom: 0;
+    min-width: 73px;
+    height: 100%;
+    border-width: 1PX;
+    border-radius: 50px;
+
+    &:before {
+        top: 2px;
+        left: 2px;
+        width: 102%;
+        height: 102%;
+        border-radius: 50px;
+    }
+}
+
+.c-marker .o-circle__inner {
+    position: relative;
+    padding: 0 10px;
+    height: 100%;
+}
+
+// prize total
+.c-marker__prize-total {
+    min-width: 50px;
+    color: white;
+    font-size: 24px;
+}

@@ -1,0 +1,49 @@
+// ALIGNMENT
+.o-align {
+    &--center {
+        text-align: center;
+    }
+
+    &--left {
+        text-align: left;
+    }
+
+    &--right {
+        text-align: right;
+    }
+}
+
+// VERTICAL ALIGN IN THE UNKNOWN
+.o-valign {
+    text-align: center;
+    white-space: nowrap;
+
+    &--stretch {
+        position: absolute 0 0 0 0;
+        margin: auto;
+        height: 100%;
+
+        @media screen\0 {
+            position: absolute 0 auto 0 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &:before {
+        display: inline-block;
+        margin-right: -4px;
+        height: 100%;
+        content: '';
+        vertical-align: middle;
+    }
+}
+
+.o-valign__inner {
+    display: inline-block;
+    vertical-align: middle;
+
+    .o-valign--stretch & {
+        padding: $grid-gutter;
+        white-space: normal;
+    }
+}

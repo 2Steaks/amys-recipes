@@ -1,0 +1,46 @@
+{% import '_macros' as macro %}
+
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="home" href="{{ siteUrl }}" />
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- picture tag fallback, loadcss, preload css fallback -->
+    <script>
+    function loadJS(a){var b=document.getElementsByTagName("script")[0],c=document.createElement("script");c.src=a,b.parentNode.insertBefore(c,b)}window.HTMLPictureElement||(document.createElement("picture"),loadJS("//cdnjs.cloudflare.com/ajax/libs/lazysizes/2.0.6/plugins/respimg/ls.respimg.min.js")),function(a){"use strict";var b=function(b,c,d){function j(a){return e.body?a():void setTimeout(function(){j(a)})}function l(){f.addEventListener&&f.removeEventListener("load",l),f.media=d||"all"}var g,e=a.document,f=e.createElement("link");if(c)g=c;else{var h=(e.body||e.getElementsByTagName("head")[0]).childNodes;g=h[h.length-1]}var i=e.styleSheets;f.rel="stylesheet",f.href=b,f.media="only x",j(function(){g.parentNode.insertBefore(f,c?g:g.nextSibling)});var k=function(a){for(var b=f.href,c=i.length;c--;)if(i[c].href===b)return a();setTimeout(function(){k(a)})};return f.addEventListener&&f.addEventListener("load",l),f.onloadcssdefined=k,k(l),f};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this),function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(a){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+    </script>
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
+
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+
+    {{ head() }}
+</head>
+
+<body>
+    <div class="container">
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+    </div>
+
+    <script src="/assets/js/app/common.bundle.js" type="text/javascript" defer></script>
+    <script src="/assets/js/app/vendor.bundle.js" type="text/javascript" defer></script>
+    <script src="/assets/js/app/app.bundle.js" type="text/javascript" defer></script>
+</body>
+
+</html>

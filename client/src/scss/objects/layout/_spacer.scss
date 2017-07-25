@@ -1,0 +1,33 @@
+/**
+ * SPACER - vertical space scaffolding
+ */
+
+.o-spacer {
+    @include mq(xs) {
+        padding: ($grid-gutter / 4) 0;
+    }
+
+    @include mq(sm) {
+        padding: ($grid-gutter / 2) 0;
+    }
+
+    &--medium {
+        @include mq(xs) {
+            padding: ($grid-gutter / 2) 0;
+        }
+
+        @include mq(sm) {
+            padding: $grid-gutter 0;
+        }
+    }
+
+    &--large {
+        @include mq(xs) {
+            padding: $grid-gutter 0;
+        }
+
+        @include mq(sm) {
+            padding: ($grid-gutter * 2) 0;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+// background cover
+@mixin background-cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// ASPECT RATIO - Give content aspect ratio
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        padding-top: ($height / $width) * 100%;
+        width: 100%;
+        content: "";
+    }
+}

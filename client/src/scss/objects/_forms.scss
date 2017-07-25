@@ -1,0 +1,120 @@
+// FORM CONTROL
+.o-form-control {
+    margin-bottom: $grid-gutter;
+
+    &.is-error {
+        border-color: $red;
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+
+            @media screen\0 {
+                text-indent: 0;
+            }
+        }
+
+        label {
+            color: $red;
+        }
+
+        ul {
+            display: inline-block;
+            padding-left: 0;
+            list-style-type: none;
+        }
+    }
+
+    &.is-error,
+    &.has-input {
+        label {
+            @include form-focus;
+        }
+    }
+}
+
+.o-form-control__error {
+    font-size: 1em;
+    line-height: 1;
+
+    .o-form-control.is-error & {
+        &:before {
+            display: inline-block;
+            content: '-\00a0';
+        }
+    }
+}
+
+.o-form-control__error ul,
+.o-form-control__error li {
+    margin: 0;
+}
+
+.o-form-control>label .error-message {
+    display: inline-block;
+}
+
+.o-form-control>label .error-message ul {
+    list-style: none;
+}
+
+.o-form-control>label .error-message ul,
+.o-form-control>label .error-message ul li {
+    margin: 0;
+}
+
+.o-form-control .placeholdersjs {
+    text-indent: -9999px;
+}
+
+// FORM FIELD
+.o-form-field {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    border: 1px solid $grey-dark;
+    background-color: white;
+}
+
+.o-form-field input {
+    margin: 0;
+    padding: 6px $grid-gutter 0;
+    width: 100%;
+    height: 70px;
+    border: none;
+    background: transparent;
+    font-weight: normal;
+    font-size: 32px;
+
+    &::placeholder {
+        font-weight: normal;
+        opacity: 0;
+
+        @media screen\0 {
+            text-indent: -9999px;
+            opacity: 1;
+        }
+    }
+
+    &:focus+label {
+        @include form-focus;
+    }
+}
+
+.o-form-field label {
+    position: absolute 15px auto auto $grid-gutter;
+    margin: 0;
+    padding: 0;
+    color: $grey-medium;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 1;
+    cursor: text;
+    transition: transform .3s, color .3s;
+    transform-origin: 0 50%;
+    text-rendering: geometricPrecision;
+}

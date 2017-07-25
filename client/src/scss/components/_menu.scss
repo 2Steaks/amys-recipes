@@ -1,0 +1,39 @@
+// container
+.c-menu {
+    height: 100%;
+}
+
+// list
+.c-menu__list {}
+
+// item
+.c-menu__item {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+    color: $red;
+    text-align: left;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+// icon
+.c-menu__item .c-icon {
+    @include mq(xs) {
+        width: 1em;
+        height: 1em;
+    }
+
+    @include mq(sm) {
+        width: 1.3em;
+        height: 1.3em;
+    }
+
+    float: right;
+}
+
+// link name
+.c-menu__name {
+    float: left;
+    border-bottom: 1PX solid currentColor;
+}

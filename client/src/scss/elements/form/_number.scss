@@ -1,0 +1,9 @@
+input[type=number] {
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        text-indent: -9999px;
+        appearance: none;
+    }
+}

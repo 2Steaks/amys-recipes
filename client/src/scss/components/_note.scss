@@ -1,0 +1,29 @@
+// container
+.c-note {
+    overflow: hidden;
+
+    .c-timeline & {
+        position: relative;
+        left: 7px;
+    }
+}
+
+// stage
+.c-note__inner {
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+// heading
+.c-note .c-heading h3 {
+    margin-bottom: 10px;
+    color: currentColor;
+    text-align: left;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+// text
+.c-note .c-text p {
+    margin-bottom: 0;
+}

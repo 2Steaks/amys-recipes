@@ -1,0 +1,33 @@
+$grid-gutter-slim: $grid-gutter / 4;
+
+// ROW MODIFIER
+.o-row--slim {
+    margin: 0 (-$grid-gutter-slim);
+}
+
+.o-row--centered {
+    display: block;
+    text-align: center;
+}
+
+.o-row--grow {
+    height: 100%;
+}
+
+.col {
+    .o-row--slim & {
+        padding: 0 $grid-gutter-slim;
+    }
+
+    // centered grid
+    .o-row--centered & {
+        @include mq(sm) {
+            margin-left: -4px;
+        }
+
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+        text-align: left;
+    }
+}

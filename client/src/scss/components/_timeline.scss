@@ -1,0 +1,76 @@
+// container
+.c-timeline {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+// wrapper
+.c-timeline__screen {
+    flex: 1;
+    overflow: auto;
+    padding: 40px 20px 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+// stage
+.c-timeline__inner {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    max-width: 405px;
+}
+
+// displays when timeline data is absent
+.c-timeline__loader {
+    position: absolute 0;
+    width: 100%;
+    height: 100;
+
+    &:before {
+        position: absolute 0;
+        margin: auto;
+        height: 50px;
+        content: attr(data-label);
+        font-size: 35px;
+        transform-origin: center;
+        animation: pulse 1.5s infinite;
+    }
+}
+
+
+.c-timeline li {
+    position: relative;
+    margin-bottom: 0;
+}
+
+// step specific
+.c-timeline li.step {
+    &:before {
+        position: absolute ($grid-gutter * 2) 0 0 0;
+        z-index: -1;
+        margin: 0 auto;
+        width: 1px;
+        border-left-width: 1PX;
+        border-left-style: solid;
+        border-left-color: currentColor;
+        content: '';
+    }
+
+    &.is-unlocked,
+    &.is-active,
+    &.is-done {
+        &:before {
+            border-left-style: dashed;
+        }
+    }
+}
+
+// progress bar modifier
+.c-timeline__progress {
+    width: 100%;
+}

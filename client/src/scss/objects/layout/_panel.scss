@@ -1,0 +1,98 @@
+// Controls
+.o-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    min-height: 100%;
+
+    @media screen\0 {
+        height: 100%;
+    }
+}
+
+.o-panel__content {
+    flex: 1;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.o-panel__controls {
+    @include mq($until: md) {
+        @include full-width();
+    }
+
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.o-panel button {}
+
+.o-panel a {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.o-panel__buttons {
+    @include mq(md) {
+        padding-bottom: 60px;
+
+        .c-sales & {
+            padding-bottom: 0;
+        }
+    }
+
+    margin: 0 auto;
+
+    &--inline {
+        @include mq(xs) {
+            margin-left: -2px;
+        }
+
+        @include mq(md) {
+            margin-left: -$grid-gutter;
+        }
+
+        display: flex;
+    }
+}
+
+.o-panel__buttons li {
+    margin-bottom: 2px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.o-panel__buttons--inline li {
+    @include mq(xs) {
+        margin-left: 2px;
+    }
+
+    @include mq(md) {
+        margin-left: $grid-gutter;
+    }
+
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.o-panel__controls a {
+    margin-bottom: 30px;
+}
+
+.o-panel__image {
+    @include mq(xs) {
+        padding: 8px;
+        width: 100%;
+        background-color: white;
+    }
+
+    @include mq(md) {
+        @include full-width();
+    }
+}
+
+.o-panel__image img {
+    height: 22px;
+}

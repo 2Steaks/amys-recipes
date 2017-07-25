@@ -1,0 +1,77 @@
+// Triangle helper mixin
+// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+// @param {Color} $color [currentcolor] - Triangle color
+// @param {Length} $size [1em] - Triangle size
+@mixin triangle($direction, $color: currentcolor, $size: 1em) {
+    $perpendicular-borders: $size solid transparent;
+
+    @if not index(top right bottom left, $direction) {
+        @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+    }
+
+    @if $direction==top or $direction==bottom {
+        border-right: $perpendicular-borders;
+        border-left: $perpendicular-borders;
+    }
+
+    @else if $direction==right or $direction==left {
+        border-top: $perpendicular-borders;
+        border-bottom: $perpendicular-borders;
+    }
+
+    z-index: 2;
+    width: 0;
+    height: 0;
+    content: '';
+    border-#{opposite-direction($direction)}: ($size * 1.5) solid $color;
+}
+
+// Gives a card depth effect.
+// @param {Number} $depth - depth level (between 1 and 5)
+// @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+// @requires {function} top-shadow
+// @requires {function} bottom-shadow
+@mixin card($depth) {
+    @if $depth < 1 {
+        box-shadow: none;
+    }
+
+    @else if $depth>5 {
+        @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+    }
+
+    @else {
+        box-shadow: bottom-shadow($depth), top-shadow($depth);
+    }
+}
+
+// Base Button Styles
+@mixin base-button {
+    display: inline-block;
+    padding: 15px;
+    width: 100%;
+    border: 1PX solid transparent;
+    background-color: $red;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 39px;
+
+    &:enabled {
+        cursor: pointer;
+    }
+
+    &:hover:enabled {
+        background-color: darken($red, 5);
+    }
+
+    &:disabled {
+        border-color: $red;
+        background-color: white;
+        color: $red;
+    }
+}
