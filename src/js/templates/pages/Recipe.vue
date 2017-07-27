@@ -1,6 +1,7 @@
 <template>
     <div>
-        Recipe!
+        <h1>{{ recipe.title }}</h1>
+        <c-image :image="recipe.image.fields" />
     </div>
 </template>
 
@@ -23,10 +24,18 @@ export default {
             recipe: {}
         };
     },
-    created() {
-        this.axios.get(`/recipes/${this.$route.params.recipe}.json`).then((data) => {
-            this.recipe = data.data;
+    beforeRouteEnter(to, from, next) {
+        next((vm) => {
+            vm.recipe = vm.$route.params.recipe.fields;
         });
+    },
+    created() {
+        if (!Object.keys(this.recipe).length > 0) {
+            this.fetchRecipe().then(() => {
+                this.recipe = this.$route.params.recipe.fields;
+            });
+        }
+
     }
 }
 </script>

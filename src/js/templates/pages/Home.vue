@@ -1,14 +1,15 @@
 <template>
     <div class="row">
         <div class="col col-xs-12 col-sm-4 col-md-3" v-for="(item, index) in recipes" :key="index">
-            <router-link :to="item.url">
-                <c-image-figure :image="item.image"></c-image-figure>
-            </router-link>
+            <div @click="linkTo(item)">
+                <c-image-figure :image="item.fields.image.fields" :caption="item.fields.title"></c-image-figure>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import CImageFigure from '../components/ImageFigure';
 
 /**
@@ -24,23 +25,24 @@ export default {
     },
     data() {
         return {
-            recipes: [{
-                title: 'Chorizo Pasta',
-                url: 'recipes/chorizo-pasta',
-                image: {
-                    alt: 'Photo of Chorizo Pasta',
-                    caption: 'Delicious Chorizo Pasta!',
-                    src: {
-                        small: 'http://localhost:8000/chorizo-pasta.jpg',
-                        medium: 'http://localhost:8000/chorizo-pasta.jpg',
-                        large: 'http://localhost:8000/chorizo-pasta.jpg'
-                    }
-                }
-            }]
+            recipes: []
         };
     },
+    methods: {
+        ...mapGetters('recipes', [
+            'getRecipes'
+        ]),
+        linkTo(entry) {
+            this.$router.push({
+                name: 'recipe', params: {
+                    slug: entry.fields.slug,
+                    recipe: entry
+                }
+            });
+        }
+    },
     created() {
-
+        this.recipes = this.getRecipes();
     }
 }
 </script>

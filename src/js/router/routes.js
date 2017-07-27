@@ -16,7 +16,7 @@ export default [{
     name: 'default',
     component: Pages.Home,
 }, {
-    path: '/recipes/:recipe',
+    path: '/recipes/:slug',
     name: 'recipe',
     component: Pages.Recipe
 }];

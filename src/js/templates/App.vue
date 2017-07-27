@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import CHeader from './components/Header';
 
 /**
@@ -38,8 +39,13 @@ export default {
      * @see module:App~windowEvents
      * @see module:App~signInManagement
      */
+    methods: {
+        ...mapActions('recipes', [
+            'runBoilerplate'
+        ])
+    },
     created() {
-
+        this.runBoilerplate();
     }
 }
 </script>

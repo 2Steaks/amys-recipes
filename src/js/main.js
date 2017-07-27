@@ -20,6 +20,7 @@ import App from './templates/App';
 // https://github.com/imcvampire/vue-axios
 import VueAxios from 'vue-axios';
 import axios from 'axios';
+import store from './store';
 
 // Lazy Loader
 // https://github.com/hilongjw/vue-lazyload
@@ -37,5 +38,6 @@ Vue.use(VueLazyload, {
 new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(App)
 });

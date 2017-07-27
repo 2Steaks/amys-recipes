@@ -1,6 +1,6 @@
 <template>
     <div class="c-image">
-        <img :key="image.src" :alt="alt" />
+        <img :src="image.file.url" :alt="image.description" />
     </div>
 </template>
 
@@ -14,6 +14,6 @@
  * @mixes module:Component
  */
 export default {
-    props: ['image', 'alt']
+    props: ['image']
 };
 </script>

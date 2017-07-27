@@ -22,7 +22,10 @@ module.exports = {
             'vue',
             'vue-axios',
             'vue-lazyload',
-            'vue-router'
+            'vue-router',
+            'vuex',
+            'contentful',
+            'cli-table2'
         ],
         app: [
             `${config.paths.src.js}/main.js`
